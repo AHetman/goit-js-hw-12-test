@@ -30,13 +30,22 @@ function onBtnSearch(e) {
   } else {
     searchImages(userSymbol)
       .then(images => {
-        loader.classList.remove('is-open');
         renderGallery(images);
       })
       .catch(error => {
+        iziToast.show({
+          position: 'topRight',
+          messageColor: 'white',
+          progressBar: false,
+          backgroundColor: 'red',
+          closeOnClick: true,
+          close: false,
+          message: `❌ Error fetching images: ${error}`,
+        });
+      })
+      .finally(() => {
         loader.classList.remove('is-open');
-        console.error('Error fetching images:', error);
+        e.target.reset();
       });
   }
-  e.target.reset();
 }
