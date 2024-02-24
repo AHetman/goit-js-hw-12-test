@@ -16,7 +16,7 @@ function createGallery(userSymbol) {
 
 export function renderGallery(userSymbol) {
   const markup = userSymbol.hits.map(createGallery).join(``);
-  gallery.innerHTML = markup;
+  gallery.insertAdjacentHTML('beforeend', markup);
 
   const myOptions = {
     captionsData: 'alt',

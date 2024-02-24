@@ -16,9 +16,15 @@
   <form class="form">
     <input type="text" name="search" placeholder="Search images...">
     <button type="submit">Search</button>
-    <div class="loader"></div>
+
   </form>
   <ul class="gallery"></ul>
+  <div class="loaders">
+    <button type="button" class="btn-load-more hidden" data-action="load-more">
+      <span class="label">Load More...</span>
+    </button>
+    <span class="loader"></span>
+  </div>
   <script src="./main.js" type="module"></script>
 </body>
 
